@@ -7,6 +7,7 @@ import java.util.Map;
 
 import io.reactivex.Flowable;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.ResponseBody;
 
 /**
  * Created by zhj on 2018/9/10.
@@ -27,6 +28,11 @@ public class RemoteDataSourceImpl<T> implements IRemoteDataSource {
 
     @Override
     public Flowable<BaseListEntity<T>> getListEntity(Map map, Flowable flowable) {
+        return flowable.subscribeOn(Schedulers.io());
+    }
+
+    @Override
+    public Flowable<ResponseBody> getStream(Map map, Flowable flowable) {
         return flowable.subscribeOn(Schedulers.io());
     }
 }

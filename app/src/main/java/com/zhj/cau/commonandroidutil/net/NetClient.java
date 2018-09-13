@@ -22,7 +22,6 @@ public final class NetClient {
 
                     Retrofit client = new Retrofit.Builder().baseUrl(HOST)
                             .client(HttpClient.getHttpClient())
-
                             .addConverterFactory(GsonConverterFactory.create())
                             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                             .build();

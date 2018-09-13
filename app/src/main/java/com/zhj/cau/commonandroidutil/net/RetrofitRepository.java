@@ -6,6 +6,7 @@ import com.zhj.cau.commonandroidutil.base.BaseListEntity;
 import java.util.Map;
 
 import io.reactivex.Flowable;
+import okhttp3.ResponseBody;
 
 /**
  * Created by zhj on 2018/9/10.
@@ -39,5 +40,10 @@ public final class RetrofitRepository<T> implements IRemoteDataSource{
     @Override
     public Flowable<BaseListEntity<T>> getListEntity(Map map, Flowable flowable) {
         return remoteDataSource.getListEntity(map,flowable);
+    }
+
+    @Override
+    public Flowable<ResponseBody> getStream(Map map, Flowable flowable) {
+        return remoteDataSource.getStream(map,flowable);
     }
 }

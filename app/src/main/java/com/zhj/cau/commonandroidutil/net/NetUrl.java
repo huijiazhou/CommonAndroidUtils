@@ -10,4 +10,5 @@ public interface NetUrl {
 
 
     String findAds = "api/ad/findAds";
+    String EventFilterLogo = "api/event/eventLiveLogoIlt";
 }
