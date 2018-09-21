@@ -24,7 +24,7 @@ public class EventModel {
     }
 
     public void getEventLogo(Map<String,Object> map){
-        RetrofitRepository.get().getListEntity(map, NetClient.get().getEventFilterLogo(map))
+        RetrofitRepository.get().getEntity(map, NetClient.get().getEventFilterLogo(map))
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError(throwable ->
                         setError(throwable))
