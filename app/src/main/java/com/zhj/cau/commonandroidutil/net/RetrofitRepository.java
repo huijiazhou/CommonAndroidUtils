@@ -33,17 +33,8 @@ public final class RetrofitRepository<T> implements IRemoteDataSource{
     }
 
     @Override
-    public Flowable<BaseEntity<T>> getEntity(Map map, Flowable flowable) {
+    public Flowable<T> getEntity(Map map, Flowable flowable) {
         return remoteDataSource.getEntity(map,flowable);
     }
 
-    @Override
-    public Flowable<BaseListEntity<T>> getListEntity(Map map, Flowable flowable) {
-        return remoteDataSource.getListEntity(map,flowable);
-    }
-
-    @Override
-    public Flowable<ResponseBody> getStream(Map map, Flowable flowable) {
-        return remoteDataSource.getStream(map,flowable);
-    }
 }

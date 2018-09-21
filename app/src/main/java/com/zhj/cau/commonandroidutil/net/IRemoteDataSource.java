@@ -14,10 +14,5 @@ import okhttp3.ResponseBody;
 
 public interface  IRemoteDataSource<T> {
     //Entity
-    Flowable<BaseEntity<T>> getEntity(Map<String, Object> map,Flowable<BaseEntity<T>> baseEntityFlowable );
-    //ListEntity
-    Flowable<BaseListEntity<T>> getListEntity(Map<String, Object> map,Flowable<BaseListEntity<T>> baseListEntityFlowable );
-    //stream
-    Flowable<ResponseBody> getStream(Map<String,Object> map,Flowable<ResponseBody> flowable);
-
+    Flowable<T> getEntity(Map<String, Object> map,Flowable<T> baseEntityFlowable );
 }

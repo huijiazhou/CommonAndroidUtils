@@ -22,17 +22,8 @@ public class RemoteDataSourceImpl<T> implements IRemoteDataSource {
 
 
     @Override
-    public Flowable<BaseEntity<T>> getEntity(Map map, Flowable flowable) {
+    public Flowable<T> getEntity(Map map, Flowable flowable) {
         return flowable.subscribeOn(Schedulers.io());
     }
 
-    @Override
-    public Flowable<BaseListEntity<T>> getListEntity(Map map, Flowable flowable) {
-        return flowable.subscribeOn(Schedulers.io());
-    }
-
-    @Override
-    public Flowable<ResponseBody> getStream(Map map, Flowable flowable) {
-        return flowable.subscribeOn(Schedulers.io());
-    }
 }
